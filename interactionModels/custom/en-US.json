@@ -1,0 +1,198 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "nica project",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "GiveNameIntent",
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "my name is {name}",
+                "{name}"
+              ]
+            }
+          ],
+          "samples": [
+            "my first name is {name}",
+            "my name is {name}",
+            "{name}"
+          ]
+        },
+        {
+          "name": "CountryIntent",
+          "slots": [
+            {
+              "name": "country",
+              "type": "AMAZON.Country",
+              "samples": [
+                "{country}"
+              ]
+            }
+          ],
+          "samples": [
+            "{country}",
+            "i live in {country}",
+            "my country is {country}"
+          ]
+        },
+        {
+          "name": "GenreIntent",
+          "slots": [
+            {
+              "name": "genre",
+              "type": "AMAZON.Genre",
+              "samples": [
+                "{genre}"
+              ]
+            }
+          ],
+          "samples": [
+            "{genre}",
+            "i like {genre}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "GiveNameIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1561064418719.651097245610"
+              }
+            }
+          ]
+        },
+        {
+          "name": "CountryIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "country",
+              "type": "AMAZON.Country",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1264951500327.628012947537"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GenreIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "genre",
+              "type": "AMAZON.Genre",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1233959998360.1595631778944"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.1233959998360.1595631778944.1268313332404",
+                  "values": [
+                    "rock",
+                    "pop",
+                    "rap",
+                    "classic",
+                    "jazz"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1561064418719.651097245610",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is your name?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1264951500327.628012947537",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "In what country do you live?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where are you from?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What country are you from?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1233959998360.1595631778944",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What genre would you like to hear?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is your favourite music genre?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1233959998360.1595631778944.1268313332404",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Right now I only work with five genres, rock, pop, classic, jazz and rap."
+          }
+        ]
+      }
+    ]
+  },
+  "version": "5"
+}

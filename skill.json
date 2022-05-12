@@ -1,0 +1,64 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Voice Assessment for NicaSource",
+          "examplePhrases": [
+            "Alexa open Nica Project",
+            "open Nica Project"
+          ],
+          "keywords": [],
+          "name": "NicaRadio",
+          "description": "This project consists of a radio player which should ask for the user name and country, besides his preferred music genre, and play a radio with the users preferred genre.\nIt stores all the data in DynamoDB.",
+          "smallIconUri": "file://assets/images/en-US_smallIconUri.png",
+          "largeIconUri": "file://assets/images/en-US_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Sample Testing Instructions.",
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:606369737587:function:45d05379-5185-4ad1-91c1-4f90b8c7ece5:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:606369737587:function:45d05379-5185-4ad1-91c1-4f90b8c7ece5:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:606369737587:function:45d05379-5185-4ad1-91c1-4f90b8c7ece5:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:606369737587:function:45d05379-5185-4ad1-91c1-4f90b8c7ece5:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {}
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}
